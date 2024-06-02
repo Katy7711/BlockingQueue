@@ -19,7 +19,7 @@ public class BlockingQueue {
       wait();
     }
     if (this.queue.size() == 0) {
-      notifyAll();
+      notify();
     }
     this.queue.add(element);
   }
@@ -30,7 +30,7 @@ public class BlockingQueue {
       wait();
     }
     if (this.queue.size() == this.limit){
-      notifyAll();
+      notify();
     }
     return this.queue.remove(0);
   }
